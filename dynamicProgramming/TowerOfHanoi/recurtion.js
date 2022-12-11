@@ -1,13 +1,13 @@
-function towerOfHanoi(n, from, to, aux) {
+function towerOfHanoi(n, from, to, via) {
   if (n == 0) return;
 
-  towerOfHanoi(n - 1, from, aux, to);
+  towerOfHanoi(n - 1, from, via, to);
 
   console.log(
     'Move disk ' + n + ' from rod ' + from + ' to rod ' + to + '<br/>'
   );
 
-  towerOfHanoi(n - 1, aux, to, from);
+  towerOfHanoi(n - 1, via, to, from);
 }
 
 console.log(towerOfHanoi(3, 'A', 'C', 'B'));
