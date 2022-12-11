@@ -3,14 +3,12 @@ function towerOfHanoi(n, from, to, via) {
 
   towerOfHanoi(n - 1, from, via, to);
 
-  console.log(
-    'Move disk ' + n + ' from rod ' + from + ' to rod ' + to + '<br/>'
-  );
+  console.log('Disk ' + n + ' moved from ' + from + ' to ' + to);
 
   towerOfHanoi(n - 1, via, to, from);
 }
 
-console.log(towerOfHanoi(3, 'A', 'C', 'B'));
+towerOfHanoi(3, 'A', 'C', 'B');
 
 //Output:
 
