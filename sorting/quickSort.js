@@ -1,5 +1,12 @@
 //based on divide-and-conquer programming approach
 
+function quickSort(arr, low, high) {
+  if (low < high) {
+    let pi = partition(arr, low, high);
+    return quickSort(arr, low, pi - 1), quickSort(arr, pi + 1, high);
+  }
+}
+
 function partition(arr, low, high) {
   let pivot = arr[high];
   let i = low - 1;
@@ -12,14 +19,6 @@ function partition(arr, low, high) {
   }
   swap(arr, i + 1, high);
   return i + 1;
-}
-
-function quickSort(arr, low, high) {
-  if (low < high) {
-    let pi = partition(arr, low, high);
-    quickSort(arr, low, pi - 1);
-    quickSort(arr, pi + 1, high);
-  }
 }
 
 function swap(arr, i, j) {
